@@ -93,6 +93,29 @@ func LogHost() string {
 	return logtail.DefaultHost
 }
 
+var getTrafficLogTargetOnce struct {
+	sync.Once
+	v string // URL of traffic logs server, or empty for default
+}
+
+func getTrafficLogTarget() string {
+	getTrafficLogTargetOnce.Do(func() {
+		envTarget, _ := os.LookupEnv("TS_TRAFFIC_LOG_TARGET")
+		getTrafficLogTargetOnce.v, _ = syspolicy.GetString(syspolicy.TrafficLogTarget, envTarget)
+	})
+
+	return getTrafficLogTargetOnce.v
+}
+
+// TrafficLogURL is the base URL for the configured traffic logtail server, or the default.
+// It is guaranteed to not terminate with any forward slashes.
+func TrafficLogURL() string {
+	if v := getTrafficLogTarget(); v != "" {
+		return strings.TrimRight(v, "/")
+	}
+	return "https://" + logtail.DefaultTrafficHost
+}
+
 // Config represents an instance of logs in a collection.
 type Config struct {
 	Collection string

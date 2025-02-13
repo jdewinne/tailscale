@@ -23,9 +23,10 @@ type Key = setting.Key
 
 const (
 	// Keys with a string value
-	ControlURL Key = "LoginURL"  // default ""; if blank, ipn uses ipn.DefaultControlURL.
-	LogTarget  Key = "LogTarget" // default ""; if blank logging uses logtail.DefaultHost.
-	Tailnet    Key = "Tailnet"   // default ""; if blank, no tailnet name is sent to the server.
+	ControlURL       Key = "LoginURL"         // default ""; if blank, ipn uses ipn.DefaultControlURL.
+	LogTarget        Key = "LogTarget"        // default ""; if blank logging uses logtail.DefaultHost.
+	TrafficLogTarget Key = "TrafficLogTarget" // default ""; if blank logging uses logtail.DefaultHost.
+	Tailnet          Key = "Tailnet"          // default ""; if blank, no tailnet name is sent to the server.
 
 	// AlwaysOn is a boolean key that controls whether Tailscale
 	// should always remain in a connected state, and the user should

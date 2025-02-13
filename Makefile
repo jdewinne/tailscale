@@ -37,6 +37,9 @@ depaware: ## Run depaware checks
 buildwindows: ## Build tailscale CLI for windows/amd64
 	GOOS=windows GOARCH=amd64 ./tool/go install tailscale.com/cmd/tailscale tailscale.com/cmd/tailscaled
 
+buildamd64: ## Build tailscale CLI for linux/amd64
+	GOOS=linux GOARCH=amd64 ./tool/go install tailscale.com/cmd/tailscale tailscale.com/cmd/tailscaled
+
 build386: ## Build tailscale CLI for linux/386
 	GOOS=linux GOARCH=386 ./tool/go install tailscale.com/cmd/tailscale tailscale.com/cmd/tailscaled
 
