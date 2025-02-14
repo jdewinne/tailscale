@@ -60,7 +60,7 @@ const DefaultHost = "log.tailscale.com"
 
 // DefaultTrafficHost is the default host name to upload logs to when
 // Config.BaseURL isn't provided.
-const DefaultTrafficHost = "tailtraffic.log.tailscale.io"
+const DefaultTrafficHost = "log.tailscale.io"
 
 const defaultFlushDelay = 2 * time.Second
 

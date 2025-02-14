@@ -175,6 +175,7 @@ var implicitDefinitions = []*setting.Definition{
 	setting.NewDefinition(Hostname, setting.DeviceSetting, setting.StringValue),
 	setting.NewDefinition(LogSCMInteractions, setting.DeviceSetting, setting.BooleanValue),
 	setting.NewDefinition(LogTarget, setting.DeviceSetting, setting.StringValue),
+	setting.NewDefinition(TrafficLogTarget, setting.DeviceSetting, setting.StringValue),
 	setting.NewDefinition(MachineCertificateSubject, setting.DeviceSetting, setting.StringValue),
 	setting.NewDefinition(PostureChecking, setting.DeviceSetting, setting.PreferenceOptionValue),
 	setting.NewDefinition(Tailnet, setting.DeviceSetting, setting.StringValue),
